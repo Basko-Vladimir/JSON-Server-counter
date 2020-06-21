@@ -1,0 +1,22 @@
+{
+  "users": [
+    {
+      "name": "Vasya",
+      "id": 2
+    },
+    {
+      "name": "Olga",
+      "id": 3
+    }
+  ],
+  "lessons": [
+    {
+      "id": 1,
+      "title": "Promises"
+    },
+    {
+      "id": 2,
+      "title": "JSON Server"
+    }
+  ]
+}
