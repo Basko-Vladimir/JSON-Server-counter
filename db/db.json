@@ -1,22 +1,27 @@
 {
   "users": [
     {
-      "name": "Vasya",
-      "id": 2
+      "name": "Olga",
+      "age": 36,
+      "id": 3
     },
     {
-      "name": "Olga",
-      "id": 3
+      "name": "Angelina",
+      "age": 29,
+      "id": 4
     }
   ],
   "lessons": [
     {
       "id": 1,
       "title": "Promises"
-    },
-    {
-      "id": 2,
-      "title": "JSON Server"
     }
-  ]
+  ],
+  "counter": {
+    "value": 5
+  },
+  "counter-settings": {
+    "maxValue": 15,
+    "startValue": 0
+  }
 }
