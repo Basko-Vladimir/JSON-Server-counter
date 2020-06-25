@@ -7,7 +7,7 @@ const instance = axios.create({
 console.log(process.env.REACT_APP_API_BASE_URL);
 
 type CounterType = {
-   value: number
+   counter: number
 }
 
 type CounterSettingsType = {
@@ -21,7 +21,7 @@ export const counterAPI = {
           .then(res => res.data)
    },
    updateCounter(newValue: number){
-      return instance.put('/counter', {value: newValue})
+      return instance.put('/counter', {counter: newValue})
    },
 
 

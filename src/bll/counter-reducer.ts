@@ -4,7 +4,7 @@ import {counterAPI} from "../dal/api";
 const SET_COUNTER_VALUE = 'counter/counter-reducer/SET_COUNTER_VALUE';
 
 const initialState = {
-    value: null as number | null
+    counter: 0
 };
 
 type StateType = typeof initialState;
@@ -14,7 +14,7 @@ export const counterReducer = (state: StateType = initialState, action: ActionsT
         case SET_COUNTER_VALUE:
             return {
                 ...state,
-                value: action.value
+                counter: action.value
             };
         default:
             return state;
@@ -22,15 +22,15 @@ export const counterReducer = (state: StateType = initialState, action: ActionsT
 };
 
 type ActionsType = ReturnType<typeof setCounterValue>
-const setCounterValue = (value: number) => ({type: SET_COUNTER_VALUE, value} as const);
+const setCounterValue = (value: number) => ({type: SET_COUNTER_VALUE, value: value} as const);
 
-export const getCounterValue = () => async (dispatch: Dispatch, getState: any) => {
+export const getCounterValue = () => async (dispatch: Dispatch) => {
       const result = await counterAPI.getCounter();
-      dispatch(setCounterValue(result.value))
+      dispatch(setCounterValue(result.counter))
 };
 
-export const updateCounterValue = (value: number) => async (dispatch: Dispatch, getState: any) => {
-    const result = await counterAPI.updateCounter(value)
+export const updateCounterValue = (value: number) => async (dispatch: Dispatch) => {
+    const result = await counterAPI.updateCounter(value);
     dispatch(setCounterValue(value))
 };
 
